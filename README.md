@@ -68,9 +68,9 @@ export default defineAction({
       getConfigTemplate({
         rules: eslintRC?.rules || {},
         ignores: eslintignore.filter(
-          (i) => !["", "node_modules", "dist", "coverage"].includes(i)
+          (i) => !["", "node_modules", "dist", "coverage"].includes(i),
         ),
-      })
+      }),
     );
 
     // Remove legacy eslint config files

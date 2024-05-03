@@ -103,7 +103,7 @@ export async function applyActionFromFile(path: string, workingDir: string) {
 export async function loadActionFromFile(path: string) {
   const _path = resolve(path);
   const actionDir = dirname(_path);
-  const _pkgDir = fileURLToPath(new URL("../..", import.meta.url));
+  const _pkgDir = fileURLToPath(new URL("..", import.meta.url));
   const jiti = createJiti(actionDir, {
     interopDefault: true,
     alias: {

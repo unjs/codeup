@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.2
+
+[compare changes](https://github.com/unjs/codeup/compare/v0.0.1...v0.0.2)
+
+### 🩹 Fixes
+
+- Use namespace import for nypm ([edab318](https://github.com/unjs/codeup/commit/edab318))
+
+### 🏡 Chore
+
+- Lint ([018604e](https://github.com/unjs/codeup/commit/018604e))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](http://github.com/pi0))
+
 ## v0.0.1
 
 

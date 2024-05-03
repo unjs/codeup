@@ -1,4 +1,4 @@
-import nypm from "nypm";
+import * as nypm from "nypm";
 import type { PackageJson } from "pkg-types";
 import { useContext } from "../context";
 import { findUp } from "./fs";
@@ -24,9 +24,9 @@ export async function readPackageJSON() {
  */
 export async function updatePackageJSON(
   fn: (
-    json: PackageJson,
+    json: PackageJson
     // biome-ignore lint: lint/suspicious/noConfusingVoidType
-  ) => void | PackageJson | Promise<PackageJson | void>,
+  ) => void | PackageJson | Promise<PackageJson | void>
 ) {
   const path = await findUp("package.json");
   if (!path) {
@@ -42,7 +42,7 @@ export async function updatePackageJSON(
  */
 export async function addDependency(
   name: string | string[],
-  opts?: nypm.OperationOptions & { log?: boolean },
+  opts?: nypm.OperationOptions & { log?: boolean }
 ) {
   const context = useContext();
   if (opts?.log !== false) {
@@ -65,7 +65,7 @@ export async function addDependency(
  */
 export async function addDevDependency(
   name: string | string[],
-  opts?: Exclude<nypm.OperationOptions, "dev"> & { log?: boolean },
+  opts?: Exclude<nypm.OperationOptions, "dev"> & { log?: boolean }
 ) {
   await addDependency(name, { dev: true, ...opts });
 }
@@ -77,7 +77,7 @@ export async function addDevDependency(
  */
 export async function removeDependency(
   name: string,
-  opts?: nypm.OperationOptions & { log?: boolean },
+  opts?: nypm.OperationOptions & { log?: boolean }
 ) {
   const context = useContext();
   if (opts?.log !== false) {

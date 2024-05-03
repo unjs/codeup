@@ -26,7 +26,7 @@
     "lint:fix": "automd && eslint . --fix && biome check --apply .",
     "prepack": "pnpm build",
     "play": "jiti playground",
-    "release": "pnpm test && changelogen --release && npm publish && git push --follow-tags",
+    "release": "pnpm test && changelogen --release && npm publish && git push --follow-tags && pnpm build --stub",
     "test": "pnpm lint && pnpm test:types",
     "test:types": "tsc --noEmit --skipLibCheck"
   },

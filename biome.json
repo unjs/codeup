@@ -4,7 +4,7 @@
     "indentStyle": "space"
   },
   "files": {
-    "ignore": []
+    "ignore": ["package.json"]
   },
   "javascript": {
     "formatter": {

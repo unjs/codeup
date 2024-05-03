@@ -1,4 +1,5 @@
 import fsp from "node:fs/promises";
+import { fileURLToPath } from "node:url";
 import consola from "consola";
 import createJiti from "jiti";
 import { dirname, extname, join, resolve } from "pathe";
@@ -6,7 +7,6 @@ import { filename } from "pathe/utils";
 import { resolveSourceDir } from "./_giget";
 import { createContext, runWithContext } from "./context";
 import type { Action } from "./types";
-import { fileURLToPath } from "node:url";
 
 /**
  * Apply an action within context and working directory.
@@ -25,13 +25,13 @@ export async function applyAction(action: Action, cwd: string) {
       consola.success(
         `Action \`${getActionName(action)}\` applied in ${(
           performance.now() - start
-        ).toFixed(2)}ms`
+        ).toFixed(2)}ms`,
       );
     });
   } catch (error) {
     consola.error(
       `Failed to apply action \`${getActionName(action)}\`:\n`,
-      error
+      error,
     );
   }
 }
@@ -44,7 +44,7 @@ export async function applyAction(action: Action, cwd: string) {
 export async function applyActions(
   actions: Action[],
   cwd: string,
-  opts?: { sort: boolean }
+  opts?: { sort: boolean },
 ) {
   const _actions = opts?.sort ? sortActions(actions) : actions;
   const _cwd = resolve(cwd || ".");
@@ -61,7 +61,7 @@ export async function applyActions(
         ].filter(Boolean) as string[];
         return `  - ${parts.join(" ")}`;
       })
-      .join("\n")}\n`
+      .join("\n")}\n`,
   );
   for (const action of _actions) {
     await applyAction(action, _cwd);
@@ -114,7 +114,7 @@ export async function loadActionFromFile(path: string) {
   const action = jiti(_path) as Action;
   if (!action || typeof action.apply !== "function") {
     throw new Error(
-      `File \`${_path}\` does not export a valid object with \`apply\` method!`
+      `File \`${_path}\` does not export a valid object with \`apply\` method!`,
     );
   }
   action._path = _path;
@@ -128,12 +128,12 @@ const supportedExtensions = new Set([".js", ".ts", ".mjs", ".cjs"]);
  */
 export async function loadActionsFromDir(actionsDir: string) {
   const actionFiles = (await fsp.readdir(actionsDir)).filter((path) =>
-    supportedExtensions.has(extname(path))
+    supportedExtensions.has(extname(path)),
   );
   const actions = await Promise.all(
     actionFiles.map(async (actionFile) =>
-      loadActionFromFile(resolve(actionsDir, actionFile))
-    )
+      loadActionFromFile(resolve(actionsDir, actionFile)),
+    ),
   );
   return actions;
 }

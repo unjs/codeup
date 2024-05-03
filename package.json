@@ -18,9 +18,7 @@
   },
   "types": "./dist/index.d.ts",
   "bin": "./dist/cli/index.mjs",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "build": "unbuild",
     "codeup": "jiti ./src/cli/index.ts",

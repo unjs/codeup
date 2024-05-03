@@ -132,7 +132,7 @@ By default actions order will be sorted by date and name.
 npx codeup apply --actions path/to/actions/dir
 
 # Run actions from a github source
-npx codeup apply --dir . --actions gh:unjs/codeup/actions/unjs
+npx codeup apply --actions gh:unjs/codeup/actions/unjs
 ```
 
 ## Utils

@@ -1,10 +1,9 @@
-import { normalize } from "pathe";
 import { defineBuildConfig } from "unbuild";
 
 export default defineBuildConfig({
   rollup: {
     output: {
-      chunkFileNames(chunk) {
+      chunkFileNames() {
         return "_[name].mjs";
       },
     },

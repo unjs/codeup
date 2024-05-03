@@ -18,12 +18,10 @@
   },
   "types": "./dist/index.d.ts",
   "bin": "./dist/cli/index.mjs",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "build": "unbuild",
-    "codeup": "jiti ./src/cli/index.ts",
+    "codeup": "jiti ./dist/cli/index.mjs",
     "lint": "eslint . && biome check .",
     "lint:fix": "automd && eslint . --fix && biome check --apply .",
     "prepack": "pnpm build",

@@ -68,9 +68,9 @@ export default defineAction({
       getConfigTemplate({
         rules: eslintRC?.rules || {},
         ignores: eslintignore.filter(
-          (i) => !["", "node_modules", "dist", "coverage"].includes(i),
+          (i) => !["", "node_modules", "dist", "coverage"].includes(i)
         ),
-      }),
+      })
     );
 
     // Remove legacy eslint config files
@@ -90,7 +90,10 @@ export default defineAction({
     });
 
     // Ensure latest eslint and preset versions are installed
-    await utils.addDevDependency(["eslint", "eslint-config-unjs"]);
+    await utils.addDevDependency([
+      "eslint@^9.0.0",
+      "eslint-config-unjs@^0.3.0",
+    ]);
 
     // Run lint:fix script once
     await utils.runScript("lint:fix");

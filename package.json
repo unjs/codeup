@@ -35,7 +35,7 @@
   "dependencies": {
     "citty": "^0.1.6",
     "consola": "^3.2.3",
-    "execa": "^8.0.1",
+    "execa": "^9.0.0",
     "giget": "^1.2.3",
     "jiti": "^1.21.0",
     "nypm": "^0.3.8",

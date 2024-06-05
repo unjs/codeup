@@ -23,9 +23,7 @@ export async function applyAction(action: Action, cwd: string) {
       consola.info(`Applying action \`${getActionName(action)}\``);
       await action.apply(context);
       consola.success(
-        `Action \`${getActionName(action)}\` applied in ${(
-          performance.now() - start
-        ).toFixed(2)}ms`,
+        `Action \`${getActionName(action)}\` applied in ${(performance.now() - start).toFixed(2)}ms`,
       );
     });
   } catch (error) {

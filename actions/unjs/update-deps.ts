@@ -28,10 +28,12 @@ export default defineAction({
       }
     });
     const pm = await utils.detectPackageManager();
-    for (const lockfileName of [pm?.lockFile].flat().filter(Boolean)) {
-      // await utils.remove(lockfileName)
-      console.log(`Removing ${lockfileName}`);
+    for (const lockfileName of [pm?.lockFile]
+      .flat()
+      .filter(Boolean) as string[]) {
+      await utils.remove(lockfileName);
     }
+    await utils.runPackageManagerCommand("install");
     await utils.runPackageManagerCommand("outdated", { ignoreErrors: true });
   },
 });

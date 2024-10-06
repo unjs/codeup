@@ -1,6 +1,5 @@
 import { defineAction } from "codeup";
 import type { PackageJson } from "pkg-types";
-import { updatePackageJSON } from "../../src/utils/pkg";
 
 export default defineAction({
   meta: {
@@ -10,7 +9,7 @@ export default defineAction({
   },
   async apply({ utils }) {
     await utils.runPackageManagerCommand("upgrade");
-    await updatePackageJSON(async (pkg) => {
+    await utils.updatePackageJSON(async (pkg) => {
       if (pkg.devDependencies) {
         await Promise.allSettled(
           Object.keys(pkg.devDependencies).map(async (name) => {

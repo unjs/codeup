@@ -1,6 +1,6 @@
 {
   "name": "codeup",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Automated Codebase Maintainer.",
   "repository": "unjs/codeup",
   "license": "MIT",

@@ -1,6 +1,32 @@
 # Changelog
 
 
+## v0.0.5
+
+[compare changes](https://github.com/unjs/codeup/compare/v0.0.4...v0.0.5)
+
+### 🚀 Enhancements
+
+- `update-deps` action ([e3d3125](https://github.com/unjs/codeup/commit/e3d3125))
+- Upgrade jiti to v2 ([f39492a](https://github.com/unjs/codeup/commit/f39492a))
+- Use confbox to preserve json style ([2a46372](https://github.com/unjs/codeup/commit/2a46372))
+
+### 💅 Refactors
+
+- Update update-deps action ([d4d620f](https://github.com/unjs/codeup/commit/d4d620f))
+
+### 🏡 Chore
+
+- Ignore `package.json` from biome formatter ([537f574](https://github.com/unjs/codeup/commit/537f574))
+- Apply automated actions ([548b254](https://github.com/unjs/codeup/commit/548b254))
+- Update deps ([c4ff2ae](https://github.com/unjs/codeup/commit/c4ff2ae))
+- Lint with prettier ([d38107e](https://github.com/unjs/codeup/commit/d38107e))
+- Apply automated actions ([2a26f60](https://github.com/unjs/codeup/commit/2a26f60))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](http://github.com/pi0))
+
 ## v0.0.4
 
 [compare changes](https://github.com/unjs/codeup/compare/v0.0.3...v0.0.4)

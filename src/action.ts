@@ -1,7 +1,7 @@
 import fsp from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import consola from "consola";
-import createJiti from "jiti";
+import { createJiti } from "jiti";
 import { dirname, extname, join, resolve } from "pathe";
 import { filename } from "pathe/utils";
 import { resolveSourceDir } from "./_giget";
@@ -105,13 +105,12 @@ export async function loadActionFromFile(path: string) {
   const actionDir = dirname(_path);
   const _pkgDir = fileURLToPath(new URL("..", import.meta.url));
   const jiti = createJiti(actionDir, {
-    interopDefault: true,
     alias: {
       codeup: join(_pkgDir, "dist/index.mjs"),
       "codeup/utils": join(_pkgDir, "dist/utils/index.mjs"),
     },
   });
-  const action = jiti(_path) as Action;
+  const action = (await jiti.import(_path, { default: true })) as Action;
   if (!action || typeof action.apply !== "function") {
     throw new Error(
       `File \`${_path}\` does not export a valid object with \`apply\` method!`,

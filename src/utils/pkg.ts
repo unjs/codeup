@@ -90,20 +90,41 @@ export async function removeDependency(
 }
 
 /**
- * Run a `package.json` script using detected package manager
+ * Detect current package manager
  *
  * @group package.json
  */
-export async function runScript(name: string) {
+export async function detectPackageManager() {
   const context = useContext();
-  const pkgManager = await nypm.detectPackageManager(context.cwd);
+  return await nypm.detectPackageManager(context.cwd)
+}
+
+/**
+ * Run a command with the detected package manager
+ *
+ * @group package.json
+ */
+export async function runPackageManagerCommand(command: string, opts?: { ignoreErrors?: boolean }) {
+  const context = useContext();
+  const pkgManager = await detectPackageManager();
   try {
     const { execa } = await import("execa");
-    await execa(pkgManager?.name || "npm", ["run", ...name.split(" ")], {
+    await execa(pkgManager?.name || "npm",  command.split(" "), {
       cwd: useContext().cwd,
       stdio: "inherit",
     });
   } catch (error) {
-    context.logger.error(error);
+    if (!opts?.ignoreErrors) {
+      context.logger.error(error);
+    }
   }
+}
+
+/**
+ * Run a `package.json` script using detected package manager
+ *
+ * @group package.json
+ */
+export async function runScript(script: string) {
+  await runPackageManagerCommand(`run ${script}`);
 }

@@ -1,3 +1,4 @@
+import { parseJSON, stringifyJSON } from "confbox";
 import { read, update, write } from "./fs";
 
 // biome-ignore lint: lint/suspicious/noConfusingVoidType
@@ -10,7 +11,7 @@ type JSON = any;
  */
 export async function readJSON(path: string): Promise<JSON | undefined> {
   const contents = await read(path);
-  return contents ? JSON.parse(contents) : undefined;
+  return contents ? parseJSON(contents) : undefined;
 }
 
 /**
@@ -23,7 +24,7 @@ export async function writeJSON(
   json: Record<string, unknown>,
   opts?: Parameters<typeof write>[2],
 ): Promise<void> {
-  await write(path, JSON.stringify(json, undefined, 2), opts);
+  await write(path, stringifyJSON(json), opts);
 }
 
 /**
@@ -38,9 +39,9 @@ export async function updateJSON<T extends JSON>(
 ): Promise<T | undefined> {
   let updated: T | undefined;
   await update(path, async (existing) => {
-    const json = JSON.parse(existing || "{}");
+    const json = parseJSON<T>(existing || `{\n  \n}\n`);
     updated = (await updater(json)) || json;
-    return JSON.stringify(updated, undefined, 2);
+    return stringifyJSON(updated);
   });
   return updated;
 }

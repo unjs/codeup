@@ -3,7 +3,7 @@
 <!-- automd:badges color=yellow -->
 
 [![npm version](https://img.shields.io/npm/v/codeup?color=yellow)](https://npmjs.com/package/codeup)
-[![npm downloads](https://img.shields.io/npm/dm/codeup?color=yellow)](https://npmjs.com/package/codeup)
+[![npm downloads](https://img.shields.io/npm/dm/codeup?color=yellow)](https://npm.chart.dev/codeup)
 
 <!-- /automd -->
 
@@ -114,7 +114,6 @@ export default unjs({
 });
 `.trim();
 }
-
 ```
 
 <!-- /automd -->
@@ -221,6 +220,10 @@ Add a dependency to the project using detected package manager
 
 Add a dev dependency to the project using detected package manager
 
+### `detectPackageManager()`
+
+Detect current package manager
+
 ### `readPackageJSON()`
 
 Try to read the closest package.json file
@@ -229,7 +232,11 @@ Try to read the closest package.json file
 
 Remove a dependency from the project using detected package manager
 
-### `runScript(name)`
+### `runPackageManagerCommand(command, opts?: { ignoreErrors? })`
+
+Run a command with the detected package manager
+
+### `runScript(script)`
 
 Run a `package.json` script using detected package manager
 

@@ -96,7 +96,7 @@ export async function removeDependency(
  */
 export async function detectPackageManager() {
   const context = useContext();
-  return await nypm.detectPackageManager(context.cwd)
+  return await nypm.detectPackageManager(context.cwd);
 }
 
 /**
@@ -104,12 +104,15 @@ export async function detectPackageManager() {
  *
  * @group package.json
  */
-export async function runPackageManagerCommand(command: string, opts?: { ignoreErrors?: boolean }) {
+export async function runPackageManagerCommand(
+  command: string,
+  opts?: { ignoreErrors?: boolean },
+) {
   const context = useContext();
   const pkgManager = await detectPackageManager();
   try {
     const { execa } = await import("execa");
-    await execa(pkgManager?.name || "npm",  command.split(" "), {
+    await execa(pkgManager?.name || "npm", command.split(" "), {
       cwd: useContext().cwd,
       stdio: "inherit",
     });

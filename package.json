@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.7.4",
-    "@typescript/native-preview": "7.0.0-dev.20260114",
+    "@typescript/native-preview": "7.0.0-dev.20260114.1",
     "automd": "^0.3.10",
     "changelogen": "^0.5.7",
     "eslint": "^9.12.0",

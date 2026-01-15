@@ -2,10 +2,15 @@
   "name": "codeup",
   "version": "0.0.5",
   "description": "Automated Codebase Maintainer.",
-  "repository": "unjs/codeup",
   "license": "MIT",
-  "sideEffects": false,
+  "repository": "unjs/codeup",
+  "bin": "./dist/cli/index.mjs",
+  "files": [
+    "dist"
+  ],
   "type": "module",
+  "sideEffects": false,
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -16,16 +21,11 @@
       "default": "./dist/utils/index.mjs"
     }
   },
-  "types": "./dist/index.d.ts",
-  "bin": "./dist/cli/index.mjs",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "build": "unbuild",
     "codeup": "jiti ./dist/cli/index.mjs",
-    "lint": "eslint . && prettier -c .",
-    "lint:fix": "automd && eslint . --fix && prettier -w .",
+    "lint": "oxlint && oxfmt --check",
+    "lint:fix": "automd && oxlint --fix && oxfmt",
     "prepack": "pnpm build",
     "play": "jiti playground",
     "release": "pnpm test && changelogen --release && npm publish && git push --follow-tags && pnpm build --stub",
@@ -49,8 +49,8 @@
     "@typescript/native-preview": "^7.0.0-dev.20260115.1",
     "automd": "^0.4.2",
     "changelogen": "^0.6.2",
-    "eslint": "^9.39.2",
-    "eslint-config-unjs": "^0.6.2",
+    "oxfmt": "^0.24.0",
+    "oxlint": "^1.39.0",
     "prettier": "^3.8.0",
     "typescript": "^5.9.3",
     "unbuild": "^3.6.1"

@@ -13,12 +13,14 @@ export default defineAction({
     const scripts = Object.values(packageJson?.scripts || {}) as string[];
 
     // Only apply if tsconfig.json exists and tsc is used for type checking
-    return (await utils.exists("tsconfig.json")) && scripts.some(script => script.includes(TS_CHECK_COMMAND));
+    return (
+      (await utils.exists("tsconfig.json")) &&
+      scripts.some((script) => script.includes(TS_CHECK_COMMAND))
+    );
   },
   async apply({ utils }) {
     // update script to use tsgo
     await utils.updatePackageJSON((pkg) => {
-
       for (const name in pkg.scripts) {
         if (pkg.scripts[name].includes(TS_CHECK_COMMAND)) {
           pkg.scripts[name] = pkg.scripts[name].replace("tsc", "tsgo");

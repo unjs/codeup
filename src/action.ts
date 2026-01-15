@@ -1,6 +1,6 @@
 import fsp from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import consola from "consola";
+import { consola } from "consola";
 import { createJiti } from "jiti";
 import { dirname, extname, join, resolve } from "pathe";
 import { filename } from "pathe/utils";

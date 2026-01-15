@@ -1,5 +1,5 @@
 import { defineAction } from "codeup";
-import type { TSConfig } from 'pkg-types';
+import type { TSConfig } from "pkg-types";
 
 const TS_CHECK_COMMAND = "tsc --noEmit";
 

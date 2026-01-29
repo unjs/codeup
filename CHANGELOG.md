@@ -1,5 +1,36 @@
 # Changelog
 
+## v0.0.6
+
+[compare changes](https://github.com/unjs/codeup/compare/v0.0.5...v0.0.6)
+
+### 🚀 Enhancements
+
+- Add tsgo switch action ([#18](https://github.com/unjs/codeup/pull/18))
+
+### 🩹 Fixes
+
+- **update-deps:** Use utils object ([e4a6179](https://github.com/unjs/codeup/commit/e4a6179))
+- Baseurl on tsgo action ([#19](https://github.com/unjs/codeup/pull/19))
+
+### 📦 Build
+
+- Migrate to obuild ([#21](https://github.com/unjs/codeup/pull/21))
+
+### 🏡 Chore
+
+- Update ci ([621ed88](https://github.com/unjs/codeup/commit/621ed88))
+- Apply automated actions ([be2068d](https://github.com/unjs/codeup/commit/be2068d))
+- Switch to oxlint and oxfmt ([#20](https://github.com/unjs/codeup/pull/20))
+- Update deps ([0075f5c](https://github.com/unjs/codeup/commit/0075f5c))
+- Update actions ([6f99428](https://github.com/unjs/codeup/commit/6f99428))
+- Update ci ([ec7c0b7](https://github.com/unjs/codeup/commit/ec7c0b7))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](https://github.com/pi0))
+- Oskar Lebuda ([@OskarLebuda](https://github.com/OskarLebuda))
+
 ## v0.0.5
 
 [compare changes](https://github.com/unjs/codeup/compare/v0.0.4...v0.0.5)

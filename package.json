@@ -12,20 +12,14 @@
   "sideEffects": false,
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.mjs"
-    },
-    "./utils": {
-      "types": "./dist/utils/index.d.ts",
-      "default": "./dist/utils/index.mjs"
-    }
+    ".": "./dist/index.mjs",
+    "./utils": "./dist/utils/index.mjs"
   },
   "scripts": {
-    "build": "unbuild",
+    "build": "obuild",
     "codeup": "jiti ./dist/cli/index.mjs",
     "lint": "oxlint && oxfmt --check",
-    "lint:fix": "automd && oxlint --fix && oxfmt",
+    "format": "automd && oxlint --fix && oxfmt",
     "prepack": "pnpm build",
     "play": "jiti playground",
     "release": "pnpm test && changelogen --release && npm publish && git push --follow-tags && pnpm build --stub",
@@ -49,10 +43,11 @@
     "@typescript/native-preview": "^7.0.0-dev.20260115.1",
     "automd": "^0.4.2",
     "changelogen": "^0.6.2",
-    "oxfmt": "^0.24.0",
-    "oxlint": "^1.39.0",
-    "typescript": "^5.9.3",
-    "unbuild": "^3.6.1"
+    "eslint-config-unjs": "^0.6.2",
+    "obuild": "^0.4.14",
+    "oxfmt": "^0.27.0",
+    "oxlint": "^1.42.0",
+    "typescript": "^5.9.3"
   },
   "packageManager": "pnpm@10.28.0"
 }

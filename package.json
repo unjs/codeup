@@ -7,14 +7,8 @@
   "sideEffects": false,
   "type": "module",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.mts",
-      "default": "./dist/index.mjs"
-    },
-    "./utils": {
-      "types": "./dist/utils/index.d.mts",
-      "default": "./dist/utils/index.mjs"
-    }
+    ".": "./dist/index.mjs",
+    "./utils": "./dist/utils/index.mjs"
   },
   "types": "./dist/index.d.mts",
   "bin": "./dist/cli/index.mjs",

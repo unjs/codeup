@@ -23,8 +23,8 @@
     "prepack": "pnpm build",
     "play": "jiti playground",
     "release": "pnpm test && changelogen --release && npm publish && git push --follow-tags && pnpm build --stub",
-    "test": "pnpm lint && pnpm test:types",
-    "test:types": "tsgo --noEmit --skipLibCheck"
+    "test": "pnpm lint && pnpm typecheck",
+    "typecheck": "tsgo --noEmit --skipLibCheck"
   },
   "dependencies": {
     "citty": "^0.2.0",

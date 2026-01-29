@@ -41,13 +41,14 @@ export default defineAction({
       await utils.remove(file);
     }
 
-    // Create oxlint.json config
+    // Create .oxlintrc.json config
     await utils.write(
-      "oxlint.json",
+      ".oxlintrc.json",
       JSON.stringify(
         {
           $schema: "https://unpkg.com/oxlint/configuration_schema.json",
           plugins: ["unicorn", "typescript", "oxc"],
+          rules: {},
         },
         null,
         2,

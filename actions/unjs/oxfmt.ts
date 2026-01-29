@@ -55,6 +55,21 @@ export default defineAction({
     // Install oxfmt as dev dependency
     await utils.addDevDependency("oxfmt");
 
+    // Update npm scripts to replace prettier with oxfmt
+    await utils.updatePackageJSON((pkg) => {
+      if (pkg.scripts) {
+        for (const [name, script] of Object.entries(pkg.scripts)) {
+          if (typeof script === "string" && script.includes("prettier")) {
+            pkg.scripts[name] = script
+              // prettier -c / prettier --check → oxfmt --check
+              .replace(/\bprettier\s+(-c|--check)\b/g, "oxfmt --check")
+              // prettier -w / prettier --write → oxfmt
+              .replace(/\bprettier\s+(-w|--write)\b/g, "oxfmt");
+          }
+        }
+      }
+    });
+
     // Run oxfmt to format the codebase
     await utils.runPackageManagerCommand("oxfmt --write .");
   },

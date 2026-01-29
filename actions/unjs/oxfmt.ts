@@ -1,4 +1,5 @@
 import { defineAction } from "codeup";
+import { runScript } from "../../src/utils/pkg";
 
 // https://prettier.io/docs/configuration
 const PRETTIER_CONFIG_FILES = [
@@ -54,5 +55,8 @@ export default defineAction({
 
     // Install oxfmt as dev dependency
     await utils.addDevDependency("oxfmt");
+
+    // Run oxfmt to format the codebase
+    await runScript("oxfmt --write .");
   },
 });

@@ -1,4 +1,5 @@
 import { defineAction } from "codeup";
+import { runScript } from "../../src/utils/pkg";
 
 // https://eslint.org/docs/latest/use/configure/configuration-files
 const ESLINT_CONFIG_FILES = [
@@ -72,5 +73,8 @@ export default defineAction({
         }
       }
     });
+
+    // Run oxlint --fix to apply fixes
+    await runScript("oxlint --fix");
   },
 });

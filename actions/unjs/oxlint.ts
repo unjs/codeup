@@ -1,5 +1,4 @@
 import { defineAction } from "codeup";
-import { runScript } from "../../src/utils/pkg";
 
 // https://eslint.org/docs/latest/use/configure/configuration-files
 const ESLINT_CONFIG_FILES = [
@@ -27,7 +26,8 @@ export default defineAction({
   async filter({ utils }) {
     // Only apply if an eslint config exists
     return (
-      (await utils.existsWithAnyExt("eslint.config")) || (await utils.existsWithAnyExt(".eslintrc"))
+      (await utils.existsWithAnyExt("eslint.config")) ||
+      (await utils.existsWithAnyExt(".eslintrc"))
     );
   },
   async apply({ utils }) {
@@ -67,14 +67,20 @@ export default defineAction({
       for (const name of ["lint", "lint:fix", "format"]) {
         if (pkg.scripts[name]) {
           // Replace eslint --fix with oxlint --fix
-          pkg.scripts[name] = pkg.scripts[name].replace(/eslint\s+--fix\b/g, "oxlint --fix");
+          pkg.scripts[name] = pkg.scripts[name].replace(
+            /eslint\s+--fix\b/g,
+            "oxlint --fix",
+          );
           // Replace eslint with oxlint (for non --fix cases)
-          pkg.scripts[name] = pkg.scripts[name].replace(/eslint(?!\s+--fix)\b/g, "oxlint");
+          pkg.scripts[name] = pkg.scripts[name].replace(
+            /eslint(?!\s+--fix)\b/g,
+            "oxlint",
+          );
         }
       }
     });
 
     // Run oxlint --fix to apply fixes
-    await runScript("oxlint --fix");
+    await utils.runScript("oxlint --fix");
   },
 });

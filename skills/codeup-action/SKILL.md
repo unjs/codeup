@@ -106,11 +106,9 @@ await utils.remove(".oldconfig");
 await utils.remove(".oldignore");
 
 // Write new config (skip if exists)
-await utils.write(
-  "new.config.json",
-  JSON.stringify({ key: "value" }, null, 2),
-  { skipIfExists: true },
-);
+await utils.write("new.config.json", JSON.stringify({ key: "value" }, null, 2), {
+  skipIfExists: true,
+});
 
 // Update package.json scripts
 await utils.updatePackageJSON((pkg) => {
@@ -150,8 +148,7 @@ export default defineAction({
   },
   async filter({ utils }) {
     return (
-      (await utils.existsWithAnyExt(".oldrc")) &&
-      !(await utils.existsWithAnyExt("new.config"))
+      (await utils.existsWithAnyExt(".oldrc")) && !(await utils.existsWithAnyExt("new.config"))
     );
   },
   async apply({ utils }) {

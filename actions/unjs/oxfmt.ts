@@ -56,6 +56,6 @@ export default defineAction({
     await utils.addDevDependency("oxfmt");
 
     // Run oxfmt to format the codebase
-    await utils.runScript("oxfmt --write .");
+    await utils.runPackageManagerCommand("oxfmt --write .");
   },
 });

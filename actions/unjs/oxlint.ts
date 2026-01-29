@@ -74,6 +74,6 @@ export default defineAction({
     });
 
     // Run oxlint --fix to apply fixes
-    await utils.runScript("oxlint --fix");
+    await utils.runPackageManagerCommand("oxlint --fix");
   },
 });

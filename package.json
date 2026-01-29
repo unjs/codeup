@@ -39,8 +39,8 @@
     "pkg-types": "^2.3.0"
   },
   "devDependencies": {
-    "@types/node": "^25.0.8",
-    "@typescript/native-preview": "^7.0.0-dev.20260115.1",
+    "@types/node": "^25.1.0",
+    "@typescript/native-preview": "^7.0.0-dev.20260129.1",
     "automd": "^0.4.2",
     "changelogen": "^0.6.2",
     "obuild": "^0.4.14",
@@ -48,5 +48,5 @@
     "oxlint": "^1.42.0",
     "typescript": "^5.9.3"
   },
-  "packageManager": "pnpm@10.28.0"
+  "packageManager": "pnpm@10.28.2"
 }

@@ -19,10 +19,7 @@ export function resolve(path: string) {
  *
  * @group fileSystem
  */
-export async function exists(
-  path: string,
-  opts?: { withAnyExt?: boolean },
-): Promise<boolean> {
+export async function exists(path: string, opts?: { withAnyExt?: boolean }): Promise<boolean> {
   if (opts?.withAnyExt) {
     const ctx = useContext();
     const files = await fsp.readdir(ctx.cwd);
@@ -89,10 +86,7 @@ export async function write(
  *
  * @group fileSystem
  */
-export async function remove(
-  path: string,
-  opts?: { log?: boolean },
-): Promise<void> {
+export async function remove(path: string, opts?: { log?: boolean }): Promise<void> {
   const ctx = useContext();
   const resolvedPath = resolve(path);
   if (!existsSync(resolvedPath)) return;
@@ -149,11 +143,7 @@ export async function update(
  *
  * @group fileSystem
  */
-export async function append(
-  path: string,
-  contents: string,
-  opts?: { newLine?: boolean },
-) {
+export async function append(path: string, contents: string, opts?: { newLine?: boolean }) {
   const sep = opts?.newLine === false ? "" : "\n";
   return update(path, (existing) => existing + sep + contents);
 }

@@ -27,9 +27,7 @@ export default defineAction({
       }
     });
     const pm = await utils.detectPackageManager();
-    for (const lockfileName of [pm?.lockFile]
-      .flat()
-      .filter(Boolean) as string[]) {
+    for (const lockfileName of [pm?.lockFile].flat().filter(Boolean) as string[]) {
       await utils.remove(lockfileName);
     }
     await utils.runPackageManagerCommand("install");

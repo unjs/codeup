@@ -104,10 +104,7 @@ export async function detectPackageManager() {
  *
  * @group package.json
  */
-export async function runPackageManagerCommand(
-  command: string,
-  opts?: { ignoreErrors?: boolean },
-) {
+export async function runPackageManagerCommand(command: string, opts?: { ignoreErrors?: boolean }) {
   const context = useContext();
   const pkgManager = await detectPackageManager();
   try {

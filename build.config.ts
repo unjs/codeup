@@ -1,11 +1,5 @@
-import { defineBuildConfig } from "unbuild";
+import { defineBuildConfig } from "obuild/config";
 
 export default defineBuildConfig({
-  rollup: {
-    output: {
-      chunkFileNames() {
-        return "_[name].mjs";
-      },
-    },
-  },
+  entries: ["src/index.ts", "src/cli/index.ts", "src/utils/index.ts"],
 });

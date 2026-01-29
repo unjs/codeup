@@ -7,22 +7,16 @@
   "sideEffects": false,
   "type": "module",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.mjs"
-    },
-    "./utils": {
-      "types": "./dist/utils/index.d.ts",
-      "default": "./dist/utils/index.mjs"
-    }
+    ".": "./dist/index.mjs",
+    "./utils": "./dist/utils/index.mjs"
   },
-  "types": "./dist/index.d.ts",
+  "types": "./dist/index.d.mts",
   "bin": "./dist/cli/index.mjs",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "unbuild",
+    "build": "obuild",
     "codeup": "jiti ./dist/cli/index.mjs",
     "lint": "eslint . && prettier -c .",
     "lint:fix": "automd && eslint . --fix && prettier -w .",
@@ -51,9 +45,9 @@
     "changelogen": "^0.6.2",
     "eslint": "^9.39.2",
     "eslint-config-unjs": "^0.6.2",
+    "obuild": "^0.4.14",
     "prettier": "^3.8.0",
-    "typescript": "^5.9.3",
-    "unbuild": "^3.6.1"
+    "typescript": "^5.9.3"
   },
   "packageManager": "pnpm@10.28.0"
 }

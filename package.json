@@ -27,15 +27,15 @@
     "test:types": "tsgo --noEmit --skipLibCheck"
   },
   "dependencies": {
-    "citty": "^0.1.6",
-    "confbox": "^0.1.8",
+    "citty": "^0.2.0",
+    "confbox": "^0.2.2",
     "consola": "^3.4.2",
     "execa": "^9.6.1",
-    "giget": "^1.2.5",
+    "giget": "^3.1.1",
     "jiti": "^2.6.1",
-    "nypm": "^0.3.12",
-    "ohash": "^1.1.6",
-    "pathe": "^1.1.2",
+    "nypm": "^0.6.4",
+    "ohash": "^2.0.11",
+    "pathe": "^2.0.3",
     "pkg-types": "^2.3.0"
   },
   "devDependencies": {

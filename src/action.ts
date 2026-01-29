@@ -23,16 +23,13 @@ export async function applyAction(action: Action, cwd: string) {
       consola.info(`Applying action \`${getActionName(action)}\``);
       await action.apply(context);
       consola.success(
-        `Action \`${getActionName(action)}\` applied in ${(
-          performance.now() - start
-        ).toFixed(2)}ms`,
+        `Action \`${getActionName(action)}\` applied in ${(performance.now() - start).toFixed(
+          2,
+        )}ms`,
       );
     });
   } catch (error) {
-    consola.error(
-      `Failed to apply action \`${getActionName(action)}\`:\n`,
-      error,
-    );
+    consola.error(`Failed to apply action \`${getActionName(action)}\`:\n`, error);
   }
 }
 
@@ -41,11 +38,7 @@ export async function applyAction(action: Action, cwd: string) {
  *
  * If `opts.sort` is true, actions will be sorted by date or name otherwise in the order they are provided.
  */
-export async function applyActions(
-  actions: Action[],
-  cwd: string,
-  opts?: { sort: boolean },
-) {
+export async function applyActions(actions: Action[], cwd: string, opts?: { sort: boolean }) {
   const _actions = opts?.sort ? sortActions(actions) : actions;
   const _cwd = resolve(cwd || ".");
   consola.info(
@@ -112,9 +105,7 @@ export async function loadActionFromFile(path: string) {
   });
   const action = (await jiti.import(_path, { default: true })) as Action;
   if (!action || typeof action.apply !== "function") {
-    throw new Error(
-      `File \`${_path}\` does not export a valid object with \`apply\` method!`,
-    );
+    throw new Error(`File \`${_path}\` does not export a valid object with \`apply\` method!`);
   }
   action._path = _path;
   return action;
@@ -130,9 +121,7 @@ export async function loadActionsFromDir(actionsDir: string) {
     supportedExtensions.has(extname(path)),
   );
   const actions = await Promise.all(
-    actionFiles.map(async (actionFile) =>
-      loadActionFromFile(resolve(actionsDir, actionFile)),
-    ),
+    actionFiles.map(async (actionFile) => loadActionFromFile(resolve(actionsDir, actionFile))),
   );
   return actions;
 }
@@ -157,10 +146,5 @@ export async function applyActionsFrom(source: string, cwd: string) {
  * Get action name from action object.
  */
 export function getActionName(action: Action): string {
-  return (
-    action.meta?.name ||
-    (action._path && filename(action._path)) ||
-    action.apply?.name ||
-    ""
-  );
+  return action.meta?.name || (action._path && filename(action._path)) || action.apply?.name || "";
 }

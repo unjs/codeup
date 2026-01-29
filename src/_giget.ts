@@ -8,14 +8,7 @@ import type { DownloadTemplateOptions } from "giget";
 import { hash } from "ohash";
 import { basename, dirname, join, resolve } from "pathe";
 
-const GIGET_PREFIXES = [
-  "gh:",
-  "github:",
-  "gitlab:",
-  "bitbucket:",
-  "https://",
-  "http://",
-];
+const GIGET_PREFIXES = ["gh:", "github:", "gitlab:", "bitbucket:", "https://", "http://"];
 
 export interface ResolveOptions {
   install?: boolean;

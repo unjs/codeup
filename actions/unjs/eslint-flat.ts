@@ -21,9 +21,7 @@ export default defineAction({
       "eslint.config.mjs",
       getConfigTemplate({
         rules: eslintRC?.rules || {},
-        ignores: eslintignore.filter(
-          (i) => !["", "node_modules", "dist", "coverage"].includes(i),
-        ),
+        ignores: eslintignore.filter((i) => !["", "node_modules", "dist", "coverage"].includes(i)),
       }),
     );
 
@@ -44,20 +42,14 @@ export default defineAction({
     });
 
     // Ensure latest eslint and preset versions are installed
-    await utils.addDevDependency([
-      "eslint@^9.0.0",
-      "eslint-config-unjs@^0.3.0",
-    ]);
+    await utils.addDevDependency(["eslint@^9.0.0", "eslint-config-unjs@^0.3.0"]);
 
     // Run lint:fix script once
     await utils.runScript("lint:fix");
   },
 });
 
-function getConfigTemplate(opts: {
-  rules: Record<string, unknown>;
-  ignores: string[];
-}) {
+function getConfigTemplate(opts: { rules: Record<string, unknown>; ignores: string[] }) {
   return /* js */ `
 import unjs from "eslint-config-unjs";
 

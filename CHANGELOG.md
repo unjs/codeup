@@ -1,6 +1,5 @@
 # Changelog
 
-
 ## v0.0.5
 
 [compare changes](https://github.com/unjs/codeup/compare/v0.0.4...v0.0.5)
@@ -86,7 +85,6 @@
 
 ## v0.0.1
 
-
 ### 🏡 Chore
 
 - Lint ([becfa92](https://github.com/unjs/codeup/commit/becfa92))
@@ -94,4 +92,3 @@
 ### ❤️ Contributors
 
 - Pooya Parsa ([@pi0](http://github.com/pi0))
-

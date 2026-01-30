@@ -4,7 +4,9 @@
   "description": "Automated Codebase Maintainer.",
   "license": "MIT",
   "repository": "unjs/codeup",
-  "bin": "./dist/cli/index.mjs",
+  "bin": {
+    "codeup": "./dist/cli/index.mjs"
+  },
   "files": [
     "dist"
   ],

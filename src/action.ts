@@ -99,8 +99,8 @@ export async function loadActionFromFile(path: string) {
   const _pkgDir = fileURLToPath(new URL("..", import.meta.url));
   const jiti = createJiti(actionDir, {
     alias: {
-      codeup: join(_pkgDir, "dist/index.mjs"),
-      "codeup/utils": join(_pkgDir, "dist/utils/index.mjs"),
+      codeup: import.meta.resolve("codeup"),
+      "codeup/utils": import.meta.resolve("codeup/utils"),
     },
   });
   const action = (await jiti.import(_path, { default: true })) as Action;

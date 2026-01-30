@@ -1,5 +1,34 @@
 # Changelog
 
+## v0.0.7
+
+[compare changes](https://github.com/unjs/codeup/compare/v0.0.6...v0.0.7)
+
+### 🚀 Enhancements
+
+- Oxfmt action ([b6b4c17](https://github.com/unjs/codeup/commit/b6b4c17))
+- Add oxlint migration scripts ([8849227](https://github.com/unjs/codeup/commit/8849227))
+
+### 🩹 Fixes
+
+- Use bundled utils ([1ed27d1](https://github.com/unjs/codeup/commit/1ed27d1))
+- Resolve codeup aliases with package name ([f2c87d7](https://github.com/unjs/codeup/commit/f2c87d7))
+
+### 📦 Build
+
+- Use explicit bin name ([f255d26](https://github.com/unjs/codeup/commit/f255d26))
+
+### 🏡 Chore
+
+- Add action skill ([2b35d5a](https://github.com/unjs/codeup/commit/2b35d5a))
+- Apply automated updates ([b1ca32b](https://github.com/unjs/codeup/commit/b1ca32b))
+- Apply automated updates ([2b2bba0](https://github.com/unjs/codeup/commit/2b2bba0))
+- Apply automated updates ([8c8a2e7](https://github.com/unjs/codeup/commit/8c8a2e7))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](https://github.com/pi0))
+
 ## v0.0.6
 
 [compare changes](https://github.com/unjs/codeup/compare/v0.0.5...v0.0.6)

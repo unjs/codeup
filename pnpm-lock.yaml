@@ -40,28 +40,28 @@ importers:
         version: 2.3.0
     devDependencies:
       '@types/node':
-        specifier: ^25.1.0
+        specifier: 25.1.0
         version: 25.1.0
       '@typescript/native-preview':
-        specifier: ^7.0.0-dev.20260129.1
+        specifier: 7.0.0-dev.20260129.1
         version: 7.0.0-dev.20260129.1
       automd:
-        specifier: ^0.4.2
+        specifier: 0.4.2
         version: 0.4.2
       changelogen:
-        specifier: ^0.6.2
+        specifier: 0.6.2
         version: 0.6.2
       obuild:
-        specifier: ^0.4.14
+        specifier: 0.4.22
         version: 0.4.22(@typescript/native-preview@7.0.0-dev.20260129.1)(typescript@5.9.3)
       oxfmt:
-        specifier: ^0.27.0
+        specifier: 0.27.0
         version: 0.27.0
       oxlint:
-        specifier: ^1.42.0
+        specifier: 1.42.0
         version: 1.42.0
       typescript:
-        specifier: ^5.9.3
+        specifier: 5.9.3
         version: 5.9.3
 
 packages:

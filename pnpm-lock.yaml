@@ -53,7 +53,7 @@ importers:
         version: 0.6.2
       obuild:
         specifier: ^0.4.14
-        version: 0.4.22(@typescript/native-preview@7.0.0-dev.20260129.1)(typescript@5.9.3)
+        version: 0.4.22(@typescript/native-preview@7.0.0-dev.20260129.1)(typescript@6.0.3)
       oxfmt:
         specifier: ^0.27.0
         version: 0.27.0
@@ -61,8 +61,8 @@ importers:
         specifier: ^1.42.0
         version: 1.42.0
       typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
+        specifier: ^6.0.3
+        version: 6.0.3
 
 packages:
 
@@ -812,8 +812,8 @@ packages:
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
-  typescript@5.9.3:
-    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+  typescript@6.0.3:
+    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -1347,7 +1347,7 @@ snapshots:
 
   obug@2.1.1: {}
 
-  obuild@0.4.22(@typescript/native-preview@7.0.0-dev.20260129.1)(typescript@5.9.3):
+  obuild@0.4.22(@typescript/native-preview@7.0.0-dev.20260129.1)(typescript@6.0.3):
     dependencies:
       c12: 3.3.3
       consola: 3.4.2
@@ -1357,7 +1357,7 @@ snapshots:
       pathe: 2.0.3
       pretty-bytes: 7.1.0
       rolldown: 1.0.0-rc.1
-      rolldown-plugin-dts: 0.21.7(@typescript/native-preview@7.0.0-dev.20260129.1)(rolldown@1.0.0-rc.1)(typescript@5.9.3)
+      rolldown-plugin-dts: 0.21.7(@typescript/native-preview@7.0.0-dev.20260129.1)(rolldown@1.0.0-rc.1)(typescript@6.0.3)
       tinyglobby: 0.2.15
     transitivePeerDependencies:
       - '@ts-macro/tsc'
@@ -1445,7 +1445,7 @@ snapshots:
 
   resolve-pkg-maps@1.0.0: {}
 
-  rolldown-plugin-dts@0.21.7(@typescript/native-preview@7.0.0-dev.20260129.1)(rolldown@1.0.0-rc.1)(typescript@5.9.3):
+  rolldown-plugin-dts@0.21.7(@typescript/native-preview@7.0.0-dev.20260129.1)(rolldown@1.0.0-rc.1)(typescript@6.0.3):
     dependencies:
       '@babel/generator': 8.0.0-beta.4
       '@babel/parser': 8.0.0-beta.4
@@ -1458,7 +1458,7 @@ snapshots:
       rolldown: 1.0.0-rc.1
     optionalDependencies:
       '@typescript/native-preview': 7.0.0-dev.20260129.1
-      typescript: 5.9.3
+      typescript: 6.0.3
     transitivePeerDependencies:
       - oxc-resolver
 
@@ -1511,7 +1511,7 @@ snapshots:
   tslib@2.8.1:
     optional: true
 
-  typescript@5.9.3: {}
+  typescript@6.0.3: {}
 
   ufo@1.6.3: {}
 

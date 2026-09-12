@@ -29,26 +29,26 @@
     "typecheck": "tsgo --noEmit --skipLibCheck"
   },
   "dependencies": {
-    "citty": "^0.2.0",
-    "confbox": "^0.2.2",
+    "citty": "^0.2.2",
+    "confbox": "^0.3.1",
     "consola": "^3.4.2",
     "execa": "^9.6.1",
-    "giget": "^3.1.1",
-    "jiti": "^2.6.1",
-    "nypm": "^0.6.4",
-    "ohash": "^2.0.11",
+    "giget": "^3.3.1",
+    "jiti": "^2.7.0",
+    "nypm": "^0.6.10",
+    "ohash": "^2.0.12",
     "pathe": "^2.0.3",
-    "pkg-types": "^2.3.0"
+    "pkg-types": "^2.3.3"
   },
   "devDependencies": {
-    "@types/node": "^25.1.0",
-    "@typescript/native-preview": "^7.0.0-dev.20260129.1",
-    "automd": "^0.4.2",
+    "@types/node": "^25.9.6",
+    "@typescript/native-preview": "^7.0.0-dev.20260707.2",
+    "automd": "^0.4.3",
     "changelogen": "^0.6.2",
-    "obuild": "^0.4.14",
-    "oxfmt": "^0.27.0",
-    "oxlint": "^1.42.0",
+    "obuild": "^0.4.39",
+    "oxfmt": "^0.67.0",
+    "oxlint": "^1.82.0",
     "typescript": "^5.9.3"
   },
-  "packageManager": "pnpm@10.28.2"
+  "packageManager": "pnpm@10.34.5"
 }

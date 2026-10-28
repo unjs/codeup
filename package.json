@@ -41,7 +41,7 @@
     "pkg-types": "^2.3.0"
   },
   "devDependencies": {
-    "@types/node": "^25.1.0",
+    "@types/node": "^26.6.5",
     "@typescript/native-preview": "^7.0.0-dev.20260129.1",
     "automd": "^0.4.2",
     "changelogen": "^0.6.2",
